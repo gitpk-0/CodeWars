@@ -55,7 +55,7 @@ public class MorseCodeDecoder {
         StringBuilder output = new StringBuilder();
 
         while (count < words.length) {
-            String[] letters = words[count].split(" ");
+            String[] letters = words[count].split("\\s"); // \\s = single whitespace character
 
             int innerCount = 0;
             while (innerCount < letters.length) {
@@ -80,10 +80,12 @@ public class MorseCodeDecoder {
 
     public static void main(String[] args) {
 
-        // String test = ".... . -.--   .--- ..- -.. ."; // "HEY JUDE"
-        String test = " . "; // E
+        String test1 = ".... . -.--   .--- ..- -.. ."; // "HEY JUDE"
+        String test2 = " . "; // E
 
-        System.out.println(decode(test));
+        System.out.println(decode(test1).toUpperCase());
+        System.out.println(decode(test2).toUpperCase());
+
 
     }
 
