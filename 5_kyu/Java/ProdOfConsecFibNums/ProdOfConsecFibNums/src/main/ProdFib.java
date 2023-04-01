@@ -24,7 +24,7 @@ public class ProdFib {
                 } else if (x * y > prod) {
                     return new long[]{x, y, 0};
                 }
-                
+
                 i++;
             }
         }
