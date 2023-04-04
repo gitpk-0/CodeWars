@@ -11,8 +11,6 @@ def pig_it(text):
     return out
 
 
-
-print(pig_it('Pig latin is cool')) # igPay atinlay siay oolcay
+print(pig_it('Pig latin is cool'))  # igPay atinlay siay oolcay
 print(pig_it('Hello world !'))     # elloHay orldway
-
-print(pig_it('O tempora o mores !')) # Oay emporatay oay oresmay !
+print(pig_it('O tempora o mores !'))  # Oay emporatay oay oresmay !
