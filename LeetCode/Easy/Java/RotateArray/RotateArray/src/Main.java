@@ -3,44 +3,63 @@
 public class Main {
 
     public static int[] rotate(int[] nums, int k) {
-        while (k > 0) {
-            // copy last index
-            int last = nums[nums.length-1];
+        // copy len - k - 1 (mid), paste to len -1 (end)
+        // copy len - 1 (end), paste to index 0
+        // copy index 0, paste to len - k - 1 (mid)
+        int midInd = nums.length - k - 1;
+        int endInd = nums.length - 1;
+        int strtInd = 0;
 
-            // move each index to the next index
-            for (int i = nums.length-1; i > 0; i--) {
-                nums[i] = nums[i - 1];
-            }
-            // paste last index to index 0
-            nums[0] = last;
+        int midVal = nums[midInd];
+        int endVal = nums[endInd];
+        int strtVal = nums[strtInd];
 
-            // repeat k times
-            k--;
-        }
+        nums[endInd] = midVal;
+        nums[strtInd] = endVal;
+        nums[midInd] = strtVal;
 
         for (int i : nums) {
             System.out.print(i+",");
         }
 
+        midInd = nums.length - k - 1;
+        midInd++;
+        endInd = nums.length - 1;
+        endInd--;
+        strtInd = 0;
+        strtInd++;
+
+        midVal = nums[midInd];
+        endVal = nums[endInd];
+        strtVal = nums[strtInd];
+
+        nums[endInd] = midVal;
+        nums[strtInd] = endVal;
+        nums[midInd] = strtVal;
+
+
+        System.out.println();
+        for (int i : nums) {
+            System.out.print(i+",");
+        }
+
+        midInd = nums.length - k - 1;
+        // endInd = nums.length - 1; // stays the same on last iteration
+        strtInd++;
+
+        // last iteration swap strtInd and endInd
+        endVal = nums[endInd];
+        strtVal = nums[strtInd];
+
+        nums[endInd] = strtVal;
+        nums[strtInd] = endVal;
+
+        System.out.println();
+        for (int i : nums) {
+            System.out.print(i+",");
+        }
 
         return nums;
-
-        // // additional memory method
-        // int[] newNums = new int[nums.length];
-        // int kcopy = k;
-        // for (int i = 0; i < nums.length; i++) {
-        //     if (i < k) {
-        //         newNums[i] = nums[nums.length - kcopy];
-        //         kcopy--;
-        //     } else {
-        //         newNums[i] = nums[i - k];
-        //     }
-        // }
-        //
-        // for (int i : newNums) {
-        //     System.out.print(i+",");
-        // }
-        // return newNums;
     }
 
     public static void main(String[] args) {
