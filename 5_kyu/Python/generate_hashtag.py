@@ -3,7 +3,6 @@ def generate_hashtag(s):
 
 
 
-
 print(generate_hashtag('Codewars')) 
 # '#Codewars', 'Should handle a single word.')
 print(generate_hashtag('Codewars      ')) 
