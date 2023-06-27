@@ -10,7 +10,7 @@ public class Main {
     }
 }
 
-// O(n^2) time  (two for loops) | 0(1) space
+// O(n^2) time  (two for loops) | 0(1) space (constant space)
 class Program {
     public static int[] twoNumberSum(int[] array, int targetSum) {
         System.out.println(array.length);
@@ -28,11 +28,11 @@ class Program {
 }
 
 
-// O(n) time | O(n) space
+// O(n) time | O(n) space (for the set)
 class Program2 {
 
     public static int[] twoNumberSum(int[] array, int targetSum) {
-        Set<Integer> nums = new HashSet<>();
+        Set<Integer> nums = new HashSet<>(); // O(n) space (additional space for the set)
         for (int num : array) {
             int potentialMatch = targetSum - num;
             if (nums.contains(potentialMatch)) {
@@ -45,15 +45,16 @@ class Program2 {
     }
 }
 
-// O(nlog(n)) | O(1) space
+// O(nlog(n)) | O(1) space (constant space)
 class Program3 {
     public static int[] twoNumberSum(int[] array, int targetSum) {
-        Arrays.sort(array);
+        Arrays.sort(array); // O(nlog(n)) time
         System.out.println("Sorted: " + Arrays.toString(array));
 
         int left = 0;
         int right = array.length - 1;
 
+        // O(n) time
         while (left < right) {
             int currentSum = array[left] + array[right];
             if (currentSum == targetSum) {
