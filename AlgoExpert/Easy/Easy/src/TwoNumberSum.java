@@ -2,16 +2,16 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Main {
+public class TwoNumberSum {
 
     public static void main(String[] args) {
-        int[] out = Program.twoNumberSum(new int[]{3, 5, -4, 8, 11, 1, -1, 6}, 10);
+        int[] out = TwoNumberSumProgram.twoNumberSum(new int[]{3, 5, -4, 8, 11, 1, -1, 6}, 10);
         System.out.println(Arrays.toString(out));
     }
 }
 
 // O(n^2) time  (two for loops) | 0(1) space (constant space)
-class Program {
+class TwoNumberSumProgram {
     public static int[] twoNumberSum(int[] array, int targetSum) {
         System.out.println(array.length);
 
@@ -29,7 +29,7 @@ class Program {
 
 
 // O(n) time | O(n) space (for the set)
-class Program2 {
+class TwoNumberSumProgram2 {
 
     public static int[] twoNumberSum(int[] array, int targetSum) {
         Set<Integer> nums = new HashSet<>(); // O(n) space (additional space for the set)
@@ -46,7 +46,7 @@ class Program2 {
 }
 
 // O(nlog(n)) | O(1) space (constant space)
-class Program3 {
+class TwoNumberSumProgram3 {
     public static int[] twoNumberSum(int[] array, int targetSum) {
         Arrays.sort(array); // O(nlog(n)) time
         System.out.println("Sorted: " + Arrays.toString(array));
